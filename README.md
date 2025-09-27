@@ -1,5 +1,4 @@
 
-<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -13,6 +12,7 @@
       --accent-dark: #0759b5;
       --highlight: #f97316; /* laranja pro botão final */
       --highlight-dark: #c2410c;
+      --green: #10b981; /* verde para confiança/garantia */
       --muted: #6b7280;
       --radius: 14px;
       --ff-sans: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
@@ -21,13 +21,15 @@
     body { font-family: var(--ff-sans); background: linear-gradient(180deg, #0f172a, #1e293b); color: #111827; line-height: 1.6; }
     .container { max-width: 1000px; margin: auto; padding: 32px 16px; }
     h1,h2,h3 { margin-bottom: 12px; }
-    h1 { font-size: 2.4rem; color: #fff; }
+    h1 { font-size: 2.4rem; color: #fff; animation: pulse-title 2s infinite; }
+    @keyframes pulse-title { 0%,100%{transform:scale(1)}50%{transform:scale(1.02)} }
     h2 { font-size: 1.8rem; color: #2c3e50; }
     p { margin-bottom: 14px; color:#374151; }
     .hero { text-align: center; padding: 48px 24px; background: linear-gradient(120deg, var(--accent), var(--accent-dark)); border-radius: var(--radius); margin-bottom: 40px; }
     .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 16px; }
     .hero .social-proof { font-size: 1rem; color: #d1d5db; margin-bottom: 24px; }
-    .section { background: var(--card); padding: 32px; border-radius: var(--radius); margin-bottom: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .section { background: var(--card); padding: 32px; border-radius: var(--radius); margin-bottom: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .section.visible { opacity:1; transform: translateY(0);}
     ul { list-style: none; padding: 0; }
     ul li { padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: 500; }
     ul li:last-child { border: none; }
@@ -35,15 +37,16 @@
     .cta:hover { background: var(--accent-dark); transform: translateY(-2px); }
     .cta-orange { background: var(--highlight); }
     .cta-orange:hover { background: var(--highlight-dark); transform: translateY(-2px); }
-    .price { font-size: 2rem; font-weight: bold; margin: 16px 0; color: #10b981; }
+    .price { font-size: 2rem; font-weight: bold; margin: 16px 0; color: var(--green); }
     .bonus { background:#f0f9ff; padding:16px; border-radius:10px; margin:12px 0; font-weight: 500; }
-    .guarantee { background:#ecfdf5; padding:16px; border-radius:10px; margin:20px 0; font-weight:500; }
+    .guarantee { background:#ecfdf5; padding:16px; border-radius:10px; margin:20px 0; font-weight:500; color: var(--green);}
     footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; padding:20px; }
     .benefits-cards { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; margin-top:16px; }
     .benefit-card { flex:1 1 calc(50% - 16px); background:#fefefe; padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); font-weight:500; transition: transform 0.2s ease; }
     .benefit-card:hover { transform: translateY(-4px); }
     .testimonials { display:flex; flex-wrap:wrap; gap:16px; margin-top:16px; }
-    .testimonial { flex:1 1 calc(33% - 16px); background:#f9fafb; padding:16px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,0.05); font-size:0.95rem; color:#374151; }
+    .testimonial { flex:1 1 calc(33% - 16px); background:#f9fafb; padding:16px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,0.05); font-size:0.95rem; color:#374151; transition: transform 0.3s ease, opacity 0.6s ease; opacity:0; transform: translateY(20px);}
+    .testimonial.visible { opacity:1; transform: translateY(0);}
     .testimonial strong { display:block; margin-top:8px; color:#111827; font-size:0.9rem; }
     @media(max-width:768px){ 
       .benefits-cards { flex-direction:column; } 
@@ -159,65 +162,4 @@
     <div class="section">
       <h2>🎁 Bônus Exclusivos</h2>
       <div class="bonus">✔️ Checklist de Autoavaliação</div>
-      <div class="bonus">✔️ Frases-cura e conectivos prontos</div>
-      <div class="bonus">✔️ Modelos de propostas de intervenção completas</div>
-      <p><em>Estes bônus são oferecidos apenas para quem garantir o e-book agora!</em></p>
-    </div>
-
-    <!-- GARANTIA -->
-    <div class="section guarantee">
-      <h2>🔒 Garantia Incondicional</h2>
-      <p>Você tem 7 dias para testar o material. Se não gostar, devolvemos 100% do valor. Sem perguntas, sem risco.</p>
-    </div>
-
-    <!-- CTA FINAL -->
-    <div class="section" style="text-align:center;">
-      <h2>O ENEM está chegando...</h2>
-      <p>Cada dia perdido é uma chance a menos de treinar. Garanta seu guia agora e transforme sua redação em diferencial!</p>
-      <div class="price">R$ 37,00</div>
-      <a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Sim, quero minha redação nota 1000 agora</a>
-    </div>
-
-    <footer>
-      © <span id="year"></span> Todos os direitos reservados.
-    </footer>
-  </div>
-
-  <!-- CONTADOR REGRESSIVO -->
-  <div id="countdown">
-    Oferta termina em: <span id="time">00:00:00</span>
-  </div>
-
-  <!-- BOTÃO FIXO -->
-  <a href="https://pay.kiwify.com.br/j4SluVK" class="cta fixed-cta">📘 Quero minha redação nota 1000 agora</a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Contador regressivo
-    const countdownDate = new Date();
-    countdownDate.setHours(23,59,59,999);
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      if (distance < 0) {
-        document.getElementById("time").textContent = "00:00:00";
-        clearInterval(interval);
-        return;
-      }
-
-      const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-      const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-      const seconds = Math.floor((distance % (1000*60))/1000);
-
-      document.getElementById("time").textContent =
-        `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    }
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
-</html>
+      <div class="bonus">✔️
