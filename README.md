@@ -82,7 +82,7 @@ footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; p
   font-family: var(--ff-sans);
   animation: pulse 1.5s infinite;
 }
-/* POPUP URGÊNCIA */
+/* POPUPS */
 #popup, #exit-popup {
   display:none;
   position: fixed;
@@ -203,16 +203,4 @@ footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; p
   <span class="close" onclick="document.getElementById('exit-popup').style.display='none'">&times;</span>
   <h2>❌ Espere!</h2>
   <p>Antes de sair, saiba que os bônus exclusivos podem acabar hoje!</p>
-  <a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Quero garantir agora</a>
-</div></div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Contador regressivo
-const countdownDate = new Date();
-countdownDate.setHours(23,59,59,999);
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = countdownDate - now;
-  if(distance < 0){ document.getElementById("time
+  <a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘
