@@ -75,7 +75,7 @@
       <h2>✅ A Solução Que Funciona</h2>
       <p>O <strong>Guia Completo para Nota 1000 em 14 Dias</strong> é um plano direto, simples e eficaz que transforma sua redação rapidamente:</p>
       <ul>
-        <li>Você terá um **plano de estudo de 14 dias** — intensivo ou flexível</li>
+        <li>Plano de estudo de 14 dias — intensivo ou flexível</li>
         <li>Modelos comentados de redações nota 1000, 800 e 600</li>
         <li>Banco de repertório pronto para qualquer tema</li>
         <li>Checklists e rubricas para autocorreção rápida</li>
