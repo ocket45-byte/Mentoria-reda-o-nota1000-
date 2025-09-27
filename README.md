@@ -6,26 +6,28 @@
 <title>Mentoria Redação Nota 1000</title>
 <style>
 body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7; color:#333; line-height:1.6; }
-header { background:#4CAF50; color:white; text-align:center; padding:50px 20px; }
-header h1 { font-size:2.2rem; margin:0 0 10px; }
-header p { font-size:1.2rem; margin:0 0 20px; }
-.btn { background:#FF5722; color:white; padding:15px 25px; text-decoration:none; font-weight:bold; border-radius:8px; display:inline-block; margin:10px 0; transition:0.3s; }
+header { background:#4CAF50; color:white; text-align:center; padding:60px 20px; }
+header h1 { font-size:2.4rem; margin:0 0 10px; }
+header p { font-size:1.3rem; margin:0 0 20px; }
+.btn { background:#FF5722; color:white; padding:18px 30px; text-decoration:none; font-weight:bold; border-radius:10px; display:inline-block; margin:10px 0; transition:0.3s; animation:pulse 2s infinite; }
+@keyframes pulse { 0% { transform:scale(1);} 50% { transform:scale(1.05);} 100% { transform:scale(1);} }
 .btn:hover { background:#e64a19; }
-.section { padding:40px 20px; max-width:900px; margin:20px auto; background:white; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
-h2 { color:#333; font-size:1.5rem; margin-bottom:15px; }
+.section { padding:50px 20px; max-width:950px; margin:25px auto; background:white; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+h2 { color:#333; font-size:1.6rem; margin-bottom:20px; }
 ul { list-style-type:none; padding:0; }
-ul li { margin-bottom:10px; font-size:1.1rem; }
-.testimonial { background:#e8f5e9; padding:20px; border-radius:8px; margin-bottom:15px; display:flex; align-items:center; animation:fadeIn 1s ease; }
+ul li { margin-bottom:12px; font-size:1.15rem; }
+.testimonial { background:#e8f5e9; padding:25px; border-radius:10px; margin-bottom:20px; display:flex; align-items:center; opacity:0; transform:translateY(20px); transition:0.5s; }
 .testimonial img { width:50px; height:50px; border-radius:50%; margin-right:15px; }
 .testimonial p { margin:0; }
-.cta-section { text-align:center; padding:50px 20px; background:#f1f1f1; border-radius:12px; position:relative; }
-.countdown { color:#FF5722; font-weight:bold; font-size:2rem; margin:20px 0; }
-.bonus { background:#fff3e0; padding:20px; border-radius:8px; margin-top:20px; }
-.float-btn { position:fixed; bottom:20px; right:20px; z-index:999; }
-.faq { background:#e3f2fd; padding:20px; border-radius:8px; margin-top:20px; }
-.faq h3 { margin-top:0; }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@media(max-width:600px){ header h1{font-size:1.7rem;} header p{font-size:1rem;} }
+.cta-section { text-align:center; padding:60px 20px; background:#f1f1f1; border-radius:15px; position:relative; }
+.countdown { color:#FF5722; font-weight:bold; font-size:2.2rem; margin:25px 0; }
+.bonus { background:#fff3e0; padding:25px; border-radius:10px; margin-top:20px; }
+.float-btn { position:fixed; bottom:25px; right:25px; z-index:999; font-size:1.1rem; }
+.faq { background:#e3f2fd; padding:25px; border-radius:10px; margin-top:25px; }
+.faq h3 { margin-top:15px; }
+@media(max-width:600px){ header h1{font-size:1.8rem;} header p{font-size:1.05rem;} .btn{padding:15px 25px; font-size:1rem;} }
+/* animação de entrada dos depoimentos */
+.visible { opacity:1 !important; transform:translateY(0) !important; }
 </style>
 </head>
 <body>
@@ -63,24 +65,24 @@ ul li { margin-bottom:10px; font-size:1.1rem; }
 </ul>
 </section>
 
-<!-- Prova Social -->
+<!-- Prova Social Animada -->
 <section class="section">
 <h2>Depoimentos de alunos</h2>
-<div class="testimonial">
+<div class="testimonial" id="t1">
 <img src="https://via.placeholder.com/50" alt="Aluno 1">
 <p>“Seguindo o método do Italo, consegui minha primeira redação nota 1000!” – Maria S.</p>
 </div>
-<div class="testimonial">
+<div class="testimonial" id="t2">
 <img src="https://via.placeholder.com/50" alt="Aluno 2">
 <p>“Simplesmente incrível! Aprendi em 2 semanas o que demoraria meses sozinho.” – João P.</p>
 </div>
-<div class="testimonial">
+<div class="testimonial" id="t3">
 <img src="https://via.placeholder.com/50" alt="Aluno 3">
 <p>“Agora me sinto confiante para qualquer tema do Enem.” – Lucas M.</p>
 </div>
 </section>
 
-<!-- Bônus -->
+<!-- Bônus com efeito deslize -->
 <section class="section bonus">
 <h2>Bônus Exclusivos:</h2>
 <ul>
@@ -88,6 +90,7 @@ ul li { margin-bottom:10px; font-size:1.1rem; }
 <li>Modelo de planejamento diário para 14 dias.</li>
 <li>Mini guia de repertório atualizado.</li>
 <li>Acesso a grupo exclusivo de suporte no WhatsApp.</li>
+<li>Videoaulas rápidas explicando cada técnica.</li>
 </ul>
 </section>
 
@@ -97,7 +100,7 @@ ul li { margin-bottom:10px; font-size:1.1rem; }
 <p>Se você não ficar satisfeito nos primeiros 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas. Sem riscos.</p>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ Expandida -->
 <section class="section faq">
 <h2>Perguntas Frequentes</h2>
 <h3>Preciso de conhecimento prévio para começar?</h3>
@@ -106,9 +109,13 @@ ul li { margin-bottom:10px; font-size:1.1rem; }
 <p>Com apenas 20-30 minutos diários, você verá resultados significativos.</p>
 <h3>O e-book funciona para qualquer tema de redação?</h3>
 <p>Sim! O método ensina técnicas aplicáveis em qualquer assunto.</p>
+<h3>Posso acessar o conteúdo pelo celular?</h3>
+<p>Sim, todo material é 100% online e responsivo.</p>
+<h3>Existe suporte se eu tiver dúvidas?</h3>
+<p>Sim, você terá acesso ao nosso grupo exclusivo de suporte.</p>
 </section>
 
-<!-- Urgência com Contador no Meio -->
+<!-- Urgência com Contador Central -->
 <section class="section cta-section">
 <h2>Oferta por tempo limitado!</h2>
 <p class="countdown" id="countdown">00:00:00</p>
@@ -133,6 +140,18 @@ let x = setInterval(function() {
   document.getElementById("countdown").innerHTML = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
   if(distance < 0){ clearInterval(x); document.getElementById("countdown").innerHTML = "OFERTA ENCERRADA"; }
 },1000);
+
+// Animação de depoimentos em sequência
+let testimonials = ["t1","t2","t3"];
+let i = 0;
+function showTestimonial(){
+  if(i<testimonials.length){
+    document.getElementById(testimonials[i]).classList.add("visible");
+    i++;
+    setTimeout(showTestimonial, 800);
+  }
+}
+window.onload = showTestimonial;
 </script>
 
 </body>
