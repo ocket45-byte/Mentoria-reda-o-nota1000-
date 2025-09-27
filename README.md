@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Redação ENEM — Guia Nota 1000 em 14 Dias</title>
+  <title>Redação Nota 1000 — Guia em 14 Dias</title>
   <style>
     :root {
       --bg: #0f172a;
@@ -22,7 +22,7 @@
     h2 { font-size: 1.8rem; color: #2c3e50; }
     p { margin-bottom: 14px; color:#374151; }
     .mockup-top { text-align:center; margin-bottom:40px; }
-    .mockup-top img { max-width:250px; border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,0.2); }
+    .mockup-top img { max-width:260px; border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,0.25); }
     .hero { text-align: center; padding: 48px 24px; background: linear-gradient(120deg, var(--accent), var(--accent-dark)); border-radius: var(--radius); margin-bottom: 40px; }
     .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 16px; }
     .hero .social-proof { font-size: 1rem; color: #d1d5db; margin-bottom: 24px; }
@@ -46,7 +46,7 @@
 
     <!-- MOCKUP -->
     <div class="mockup-top">
-      <img src="https://via.placeholder.com/250x350.png?text=Redacao+Nota+1000" alt="Mockup do E-book">
+      <img src="https://i.imgur.com/1R8wz9T.png" alt="Capa do E-book Redação Nota 1000">
     </div>
 
     <!-- HERO -->
