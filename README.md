@@ -21,7 +21,7 @@
 body { font-family: var(--ff-sans); background: linear-gradient(180deg, #0f172a, #1e293b); color: #111827; line-height: 1.6; overflow-x:hidden; }
 .container { max-width: 1000px; margin: auto; padding: 32px 16px; }
 h1,h2,h3 { margin-bottom: 12px; }
-h1 { font-size: 2.4rem; color: #fff; animation: pulse-title 2s infinite; }
+h1 { font-size: 2.4rem; color: #fff; animation: pulse-title 2s infinite; text-align:center; }
 @keyframes pulse-title { 0%,100%{transform:scale(1)}50%{transform:scale(1.02)} }
 h2 { font-size: 1.8rem; color: #2c3e50; }
 p { margin-bottom: 14px; color:#374151; }
@@ -48,11 +48,15 @@ footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; p
 .testimonial { flex:1 1 calc(33% - 16px); background:#f9fafb; padding:16px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,0.05); font-size:0.95rem; color:#374151; transition: transform 0.3s ease, opacity 0.6s ease; opacity:0; transform: translateY(20px);}
 .testimonial.visible { opacity:1; transform: translateY(0);}
 .testimonial strong { display:block; margin-top:8px; color:#111827; font-size:0.9rem }
+/* Responsividade */
 @media(max-width:768px){ 
+  h1 { font-size:2rem; }
+  h2 { font-size:1.5rem; }
   .benefits-cards { flex-direction:column; } 
   .benefit-card { flex:1 1 100%; } 
   .testimonials { flex-direction:column; }
   .testimonial { flex:1 1 100%; }
+  .hero { padding:32px 16px;}
 }
 /* Botão fixo */
 .fixed-cta {
@@ -63,6 +67,8 @@ footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; p
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   animation: pulse 2s infinite;
   background: var(--highlight);
+  padding: 14px 18px;
+  font-size: 1rem;
 }
 .fixed-cta:hover { background: var(--highlight-dark); transform: translateY(-2px); }
 @keyframes pulse {0% { transform: scale(1); }50% { transform: scale(1.05); }100% { transform: scale(1); }}
@@ -74,7 +80,7 @@ footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; p
   z-index: 9999;
   background: var(--highlight);
   color: #fff;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 14px;
   font-weight: 700;
   text-align: center;
@@ -100,107 +106,152 @@ footer { text-align:center; font-size:0.85rem; color:#9ca3af; margin-top:40px; p
 <body>
 <div class="container">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Redação Nota 1000 em 14 Dias — Método Testado por +500 Estudantes</h1>
-    <p>Mesmo que hoje você não saiba por onde começar, este método vai te dar segurança, repertório e técnicas para impressionar os corretores.</p>
-    <div class="social-proof">Mais de 500 estudantes já conquistaram notas 900+ com este guia!</div>
-    <div class="price">R$ 37,00</div>
-    <a href="https://pay.kiwify.com.br/j4SluVK" class="cta">📘 Quero minha redação nota 1000 agora</a>
-  </div>
-
-  <!-- PROBLEMA -->
-  <div class="section">
-    <h2>❌ Você provavelmente já...</h2>
-    <ul>
-      <li>Ficou travado sem saber como começar sua redação</li>
-      <li>Perdeu pontos por não conseguir usar repertório sociocultural</li>
-      <li>Não sabia como construir uma proposta de intervenção completa</li>
-      <li>Se sentiu inseguro na hora da prova e perdeu tempo precioso</li>
-    </ul>
-    <p>Sem o método certo, é fácil desperdiçar tempo e arriscar sua aprovação. Mas você pode mudar isso agora!</p>
-  </div>
-
-  <!-- SOLUÇÃO -->
-  <div class="section">
-    <h2>✅ A Solução Que Funciona</h2>
-    <p>O <strong>Guia Completo para Nota 1000 em 14 Dias</strong> é um plano direto, simples e eficaz que transforma sua redação rapidamente:</p>
-    <ul>
-      <li>Plano de estudo de 14 dias — intensivo ou flexível</li>
-      <li>Modelos comentados de redações nota 1000, 800 e 600</li>
-      <li>Banco de repertório pronto para qualquer tema</li>
-      <li>Checklists e rubricas para autocorreção rápida</li>
-      <li>Exercícios práticos com gabarito comentado</li>
-    </ul>
-  </div>
-
-  <!-- BENEFÍCIOS -->
-  <div class="section">
-    <h2>🚀 O que você ganha</h2>
-    <div class="benefits-cards">
-      <div class="benefit-card">Mais confiança no dia da prova</div>
-      <div class="benefit-card">Clareza e organização nas ideias</div>
-      <div class="benefit-card">Repertório certeiro para qualquer tema</div>
-      <div class="benefit-card">Propostas de intervenção completas</div>
-      <div class="benefit-card">Chance real de alcançar 900+ na redação</div>
-    </div>
-  </div>
-
-  <!-- DEPOIMENTOS -->
-  <div class="section">
-    <h2>💬 O que dizem os alunos</h2>
-    <div class="testimonials">
-      <div class="testimonial">"Nunca pensei que conseguiria 900+ na redação! Este guia mudou meu jeito de estudar." <strong>— Ana, SP</strong></div>
-      <div class="testimonial">"Em 2 semanas consegui organizar meu repertório e aumentar minha nota de 680 para 880." <strong>— Lucas, MG</strong></div>
-      <div class="testimonial">"Cheguei no dia da prova com segurança. O método é direto e simples de aplicar." <strong>— Carla, PR</strong></div>
-    </div>
-  </div>
-
-  <!-- BONUS -->
-  <div class="section">
-    <h2>🎁 Bônus Exclusivos</h2>
-    <div class="bonus">✔️ Checklist de Autoavaliação</div>
-    <div class="bonus">✔️ Frases-cura e conectivos prontos</div>
-    <div class="bonus">✔️ Modelos de propostas de intervenção completas</div>
-    <p>🔥 Apenas os 100 primeiros alunos garantem estes bônus exclusivos!</p>
-  </div>
-
-  <!-- GARANTIA -->
-  <div class="section guarantee">
-    <h2>🔒 Garantia Incondicional</h2>
-    <p>Você tem 7 dias para testar o material. Se não gostar, devolvemos 100% do valor. Sem perguntas, sem risco.</p>
-  </div>
-
-  <!-- CTA FINAL -->
-  <div class="section" style="text-align:center;">
-    <h2>O ENEM está chegando...</h2>
-    <p>Cada dia perdido é uma chance a menos de treinar. Garanta seu guia agora e transforme sua redação em diferencial!</p>
-    <div class="price">R$ 37,00</div>
-    <a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Sim, quero minha redação nota 1000 agora</a>
-  </div>
-
-  <footer>
-    © <span id="year"></span> Todos os direitos reservados.
-  </footer>
+<!-- HERO -->
+<div class="hero">
+<h1>Redação Nota 1000 em 14 Dias — Método Testado por +500 Estudantes</h1>
+<p>Mesmo que hoje você não saiba por onde começar, este método vai te dar segurança, repertório e técnicas para impressionar os corretores.</p>
+<div class="social-proof">Mais de 500 estudantes já conquistaram notas 900+ com este guia!</div>
+<div class="price">R$ 37,00</div>
+<a href="https://pay.kiwify.com.br/j4SluVK" class="cta">📘 Quero minha redação nota 1000 agora</a>
 </div>
 
-<!-- CONTADOR FIXO -->
-<div id="countdown">🔥 Oferta termina em: <span id="time">00:00:00</span></div>
+<!-- PROBLEMA -->
+<div class="section">
+<h2>❌ Você provavelmente já...</h2>
+<ul>
+<li>Ficou travado sem saber como começar sua redação</li>
+<li>Perdeu pontos por não conseguir usar repertório sociocultural</li>
+<li>Não sabia como construir uma proposta de intervenção completa</li>
+<li>Se sentiu inseguro na hora da prova e perdeu tempo precioso</li>
+</ul>
+<p>Sem o método certo, é fácil desperdiçar tempo e arriscar sua aprovação. Mas você pode mudar isso agora!</p>
+</div>
+
+<!-- SOLUÇÃO -->
+<div class="section">
+<h2>✅ A Solução Que Funciona</h2>
+<p>O <strong>Guia Completo para Nota 1000 em 14 Dias</strong> é um plano direto, simples e eficaz que transforma sua redação rapidamente:</p>
+<ul>
+<li>Plano de estudo de 14 dias — intensivo ou flexível</li>
+<li>Modelos comentados de redações nota 1000, 800 e 600</li>
+<li>Banco de repertório pronto para qualquer tema</li>
+<li>Checklists e rubricas para autocorreção rápida</li>
+<li>Exercícios práticos com gabarito comentado</li>
+</ul>
+</div>
+
+<!-- BENEFÍCIOS -->
+<div class="section">
+<h2>🚀 O que você ganha</h2>
+<div class="benefits-cards">
+<div class="benefit-card">Mais confiança no dia da prova</div>
+<div class="benefit-card">Clareza e organização nas ideias</div>
+<div class="benefit-card">Repertório certeiro para qualquer tema</div>
+<div class="benefit-card">Propostas de intervenção completas</div>
+<div class="benefit-card">Chance real de alcançar 900+ na redação</div>
+</div>
+</div>
+
+<!-- DEPOIMENTOS -->
+<div class="section">
+<h2>💬 O que dizem os alunos</h2>
+<div class="testimonials">
+<div class="testimonial">"Nunca pensei que conseguiria 900+ na redação! Este guia mudou meu jeito de estudar." <strong>— Ana, SP</strong></div>
+<div class="testimonial">"Em 2 semanas consegui organizar meu repertório e aumentar minha nota de 680 para 880." <strong>— Lucas, MG</strong></div>
+<div class="testimonial">"Cheguei no dia da prova com segurança. O método é direto e simples de aplicar." <strong>— Carla, PR</strong></div>
+</div>
+</div>
+
+<!-- BONUS -->
+<div class="section">
+<h2>🎁 Bônus Exclusivos</h2>
+<div class="bonus">✔️ Checklist de Autoavaliação</div>
+<div class="bonus">✔️ Frases-cura e conectivos prontos</div>
+<div class="bonus">✔️ Modelos de propostas de intervenção completas</div>
+<p>🔥 Apenas os 100 primeiros alunos garantem estes bônus exclusivos!</p>
+</div>
+
+<!-- GARANTIA -->
+<div class="section guarantee">
+<h2>🔒 Garantia Incondicional</h2>
+<p>Você tem 7 dias para testar o material. Se não gostar, devolvemos 100% do valor. Sem perguntas, sem risco.</p>
+</div>
+
+<!-- CTA FINAL -->
+<div class="section" style="text-align:center;">
+<h2>O ENEM está chegando...</h2>
+<p>Cada dia perdido é uma chance a menos de treinar. Garanta seu guia agora e transforme sua redação em diferencial!</p>
+<div class="price">R$ 37,00</div>
+<a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Sim, quero minha redação nota 1000 agora</a>
+</div>
+
+<footer>
+© <span id="year"></span> Todos os direitos reservados.
+</footer>
+</div>
 
 <!-- BOTÃO FIXO -->
 <a href="https://pay.kiwify.com.br/j4SluVK" class="cta fixed-cta">📘 Quero minha redação nota 1000 agora</a>
 
-<!-- POPUP URGÊNCIA -->
+<!-- CONTADOR FIXO -->
+<div id="countdown">🔥 Oferta termina em: <span id="time">00:00:00</span></div>
+
+<!-- POPUPS -->
 <div id="popup"><div class="content">
-  <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
-  <h2>⚠️ Oferta Limitada!</h2>
-  <p>Os bônus exclusivos podem acabar a qualquer momento!</p>
-  <a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Quero garantir agora</a>
+<span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+<h2>⚠️ Oferta Limitada!</h2>
+<p>Os bônus exclusivos podem acabar a qualquer momento!</p>
+<a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Quero garantir agora</a>
 </div></div>
 
-<!-- POPUP EXIT-INTENT -->
 <div id="exit-popup"><div class="content">
-  <span class="close" onclick="document.getElementById('exit-popup').style.display='none'">&times;</span>
-  <h2>❌ Espere!</h2>
-  <p>Antes de sair, saiba que os bônus exclusivos podem acabar hoje!</p>
-  <a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘
+<span class="close" onclick="document.getElementById('exit-popup').style.display='none'">&times;</span>
+<h2>❌ Espere!</h2>
+<p>Antes de sair, saiba que os bônus exclusivos podem acabar hoje!</p>
+<a href="https://pay.kiwify.com.br/j4SluVK" class="cta cta-orange">📘 Quero garantir agora</a>
+</div></div>
+
+<script>
+// Atualiza ano no footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Contador regressivo até o final do dia
+function startCountdown() {
+  const countdownDate = new Date();
+  countdownDate.setHours(23,59,59,999);
+  const countdownEl = document.getElementById('time');
+  function update() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+    if(distance < 0){ countdownEl.textContent = "00:00:00"; return; }
+    const h = String(Math.floor((distance/(1000*60*60)))).padStart(2,'0');
+    const m = String(Math.floor((distance%(1000*60*60))/(1000*60))).padStart(2,'0');
+    const s = String(Math.floor((distance%(1000*60))/1000)).padStart(2,'0');
+    countdownEl.textContent = `${h}:${m}:${s}`;
+  }
+  update();
+  setInterval(update,1000);
+}
+startCountdown();
+
+// Mostra popup de saída
+let exitPopupShown = false;
+document.addEventListener('mouseout', function(e){
+  if(e.clientY < 10 && !exitPopupShown){
+    document.getElementById('exit-popup').style.display='flex';
+    exitPopupShown = true;
+  }
+});
+
+// Mostrar seções e depoimentos animados
+window.addEventListener('scroll', function(){
+  document.querySelectorAll('.section').forEach(s=>{
+    if(s.getBoundingClientRect().top < window.innerHeight - 50) s.classList.add('visible');
+  });
+  document.querySelectorAll('.testimonial').forEach(t=>{
+    if(t.getBoundingClientRect().top < window.innerHeight - 50) t.classList.add('visible');
+  });
+});
+</script>
+</body>
+</html>
